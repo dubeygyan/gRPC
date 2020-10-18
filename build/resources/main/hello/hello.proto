@@ -1,8 +1,0 @@
-syntax = "proto3";
-package hello;
-
-option java_package = "com.proto.hello";
-option java_multiple_files = true;
-
-message HelloMessage{}
-service HelloService{}
