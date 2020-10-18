@@ -4,5 +4,18 @@ package hello;
 option java_package = "com.proto.hello";
 option java_multiple_files = true;
 
-message HelloMessage{}
-service HelloService{}
+message HelloMessage{
+  string name=1;
+}
+message  HelloRequest{
+HelloMessage hello=1;
+}
+message HelloResponse{
+string result =1;
+}
+service HelloService{
+  // 1st Unary API
+  rpc sayHello(HelloRequest) returns (HelloResponse){};
+
+}
+
