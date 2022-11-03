@@ -14,8 +14,14 @@ message HelloResponse{
 string result =1;
 }
 service HelloService{
-  // 1st Unary API
+  //  Unary API
   rpc sayHello(HelloRequest) returns (HelloResponse){};
+  //  Server Streaming API
+  rpc sayHelloAsServerStream(HelloRequest) returns (stream HelloResponse){};
+  // Client Streaming API
+  rpc sayHelloAsClientStream(stream HelloRequest) returns (HelloResponse){};
+  // Bi-Directional Streaming API
+  rpc sayHelloAsStream(stream HelloRequest) returns (stream HelloResponse){};
 
 }
 
